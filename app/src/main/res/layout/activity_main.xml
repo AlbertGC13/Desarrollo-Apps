@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtProgramar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/txtProgramar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNacimiento" />
+
+    <TextView
+        android:id="@+id/txtLenguaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="318dp"
+        android:text="@string/txtLenguaje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cbJava"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProgramar" />
+
+    <TextView
+        android:id="@+id/txtNacimiento"
+        android:layout_width="137dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/txtNacimiento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGenero" />
+
+    <TextView
+        android:id="@+id/txtGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/txtGenero"
+        app:layout_constraintBottom_toTopOf="@+id/txtNacimiento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etextApellido" />
+
+    <EditText
+        android:id="@+id/etextNombre"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:height="48dp"
+        android:ems="10"
+        android:hint="@string/name_txt"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etextApellido"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:height="48dp"
+        android:ems="10"
+        android:hint="@string/apellido_txt"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etextNombre" />
+
+    <Spinner
+        android:id="@+id/spnGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/etextFecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtGenero"
+        app:layout_constraintTop_toBottomOf="@+id/etextApellido"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etextFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="@string/etFecha"
+        android:focusable="false"
+        android:clickable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtNacimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtNacimiento" />
+
+    <CheckBox
+        android:id="@+id/cbJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/cbJava"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtLenguaje"
+        app:layout_constraintEnd_toStartOf="@+id/cbPython" />
+
+    <CheckBox
+        android:id="@+id/cbPython"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:text="@string/cbPython"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cbJava"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbJS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cbJS"
+        app:layout_constraintStart_toStartOf="@+id/cbJava"
+        app:layout_constraintTop_toBottomOf="@+id/cbJava" />
+
+    <CheckBox
+        android:id="@+id/cbC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cbCSharp"
+        app:layout_constraintStart_toStartOf="@+id/cbJS"
+        app:layout_constraintTop_toBottomOf="@+id/cbJS" />
+
+    <CheckBox
+        android:id="@+id/cbCSharp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cbCSharp"
+        app:layout_constraintStart_toStartOf="@+id/cbGo"
+        app:layout_constraintTop_toBottomOf="@+id/cbGo" />
+
+    <CheckBox
+        android:id="@+id/cbGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cbGo"
+        app:layout_constraintStart_toStartOf="@+id/cbPython"
+        app:layout_constraintTop_toBottomOf="@+id/cbPython" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="93dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/btnLimpiar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/cbCSharp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="93dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/btnEnviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbC" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/cbJava"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toEndOf="@+id/txtProgramar"
+        app:layout_constraintTop_toBottomOf="@+id/etextApellido"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/rbNo"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtProgramar"
+            app:layout_constraintStart_toEndOf="@+id/radioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="77dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/rbSi"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtProgramar"
+            app:layout_constraintStart_toEndOf="@+id/txtProgramar" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

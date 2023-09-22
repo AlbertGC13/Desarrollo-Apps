@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">my first app</string>
+    <string name="name_txt">Digite su nombre</string>
+    <string name="apellido_txt">Digite su apellido</string>
+    <string name="cbJava">Java</string>
+    <string name="cbJS">JS</string>
+    <string name="cbC">C/C++</string>
+    <string name="cbPython">Python</string>
+    <string name="cbGo">Go Land</string>
+    <string name="cbCSharp">C#</string>
+    <string name="rbSi">Si</string>
+    <string name="rbNo">No</string>
+    <string name="txtGenero">Genero</string>
+    <string name="txtNacimiento">Nacimiento</string>
+    <string name="txtLenguaje">Lenguaje</string>
+    <string name="txtProgramar">Le gusta programar?</string>
+    <string name="etFecha">dd/mm/yyyy</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="btnLimpiar">Limpiar</string>
+    <string-array name="generos">
+        <item>Seleccionar</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
+
+
+</resources>
