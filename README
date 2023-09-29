@@ -1,0 +1,14 @@
+Informe Aplicación de Lista de Tareas
+
+Desafíos enfrentados y sus soluciones:
+1- Diseño con pestañas:
+   Desafío: El diseño con pestañas fue algo complejo mi que estoy aprendiendo Android.
+   Solución: Se utilizó el TabLayout junto con el ViewPager para lograr un diseño con pestañas. Se creó un adaptador personalizado (Adapter) para gestionar y mostrar los fragmentos adecuadamente en cada pestaña.
+
+2-Gestión de listas:
+  Desafío: Manejar las listas de tareas en ListView y RecyclerView requiere enfoques distintos, especialmente cuando se trata de actualizaciones y eliminaciones.
+  Solución: Para ListView, se utilizó un ArrayAdapter simple que facilita la gestión de la lista. Para RecyclerView, se personalizo el Adapter para más control sobre la visualización y gestión de los elementos.
+
+3-Personalización de ítems en RecyclerView:
+  Desafío: Agregar una imagen a cada tarea en el RecyclerView.
+  Solución: Se creó un diseño personalizado para los ítems del RecyclerView que incluye un ImageView. A través del adaptador personalizado, se aseguró que cada ítem muestre la imagen guardada en la carpeta drawable junto con el texto de la tarea.
