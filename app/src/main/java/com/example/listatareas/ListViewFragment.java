@@ -35,7 +35,7 @@ public class ListViewFragment extends Fragment {
         listViewTasks = view.findViewById(R.id.listViewTasks);
 
         tasksList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, tasksList);
+        adapter = new ArrayAdapter<>(getContext(), R.layout.itemlv, R.id.textViewTask, tasksList);
         listViewTasks.setAdapter(adapter);
 
         buttonAdd.setOnClickListener(v -> {
@@ -48,16 +48,42 @@ public class ListViewFragment extends Fragment {
         });
 
         listViewTasks.setOnItemClickListener((parent, view1, position, id) -> {
+            CharSequence[] items = {"Editar", "Eliminar"};
+
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle("Eliminar tarea")
-                    .setMessage("¿Deseas eliminar esta tarea?")
-                    .setPositiveButton("Sí", (dialog, which) -> {
-                        tasksList.remove(position);
-                        adapter.notifyDataSetChanged();
-                    })
-                    .setNegativeButton("No", null)
-                    .show();
+            builder.setTitle("Elige una acción");
+            builder.setItems(items, (dialog, which) -> {
+                if (which == 0) { // Editar
+                    AlertDialog.Builder editDialog = new AlertDialog.Builder(getContext());
+                    editDialog.setTitle("Editar tarea");
+
+                    final EditText input = new EditText(getContext());
+                    input.setText(tasksList.get(position));
+                    editDialog.setView(input);
+
+                    editDialog.setPositiveButton("Guardar", (d, w) -> {
+                        tasksList.set(position, input.getText().toString());
+                        adapter.notifyDataSetChanged(); // Usar esto en lugar de notifyItemChanged
+                    });
+                    editDialog.setNegativeButton("Cancelar", null);
+
+                    editDialog.show();
+                } else {
+                    AlertDialog.Builder deleteDialog = new AlertDialog.Builder(getContext());
+                    deleteDialog.setTitle("Eliminar tarea")
+                            .setMessage("¿Deseas eliminar esta tarea?")
+                            .setPositiveButton("Sí", (deleteD, item) -> {
+                                tasksList.remove(position);
+                                adapter.notifyDataSetChanged();
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+                }
+            });
+
+            builder.show();
         });
+
 
         return view;
     }

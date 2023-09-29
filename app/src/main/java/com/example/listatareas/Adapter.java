@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,16 +37,42 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.textView.setText(task);
 
         holder.itemView.setOnClickListener(v -> {
+            CharSequence[] items = {"Editar", "Eliminar"};
+
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Eliminar tarea")
-                    .setMessage("¿Deseas eliminar esta tarea?")
-                    .setPositiveButton("Sí", (dialog, which) -> {
-                        tasksList.remove(position);
-                        notifyItemRemoved(position);
-                    })
-                    .setNegativeButton("No", null)
-                    .show();
+            builder.setTitle("Elige una acción");
+            builder.setItems(items, (dialog, which) -> {
+                if (which == 0) { // Editar
+                    AlertDialog.Builder editDialog = new AlertDialog.Builder(context);
+                    editDialog.setTitle("Editar tarea");
+
+                    final EditText input = new EditText(context);
+                    input.setText(tasksList.get(position));
+                    editDialog.setView(input);
+
+                    editDialog.setPositiveButton("Guardar", (d, w) -> {
+                        tasksList.set(position, input.getText().toString());
+                        notifyItemChanged(position);
+                    });
+                    editDialog.setNegativeButton("Cancelar", null);
+
+                    editDialog.show();
+                } else {
+                    AlertDialog.Builder editDialog = new AlertDialog.Builder(context);
+                    editDialog.setTitle("Eliminar tarea")
+                            .setMessage("¿Deseas eliminar esta tarea?")
+                            .setPositiveButton("Sí", (deleteDialog, item) -> {
+                                tasksList.remove(position);
+                                notifyItemRemoved(position);
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+                }
+            });
+            builder.show();
         });
+
+
     }
 
     @Override
