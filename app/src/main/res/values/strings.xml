@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Examen 1</string>
+    <string name="add_task">Nueva Tarea</string>
+    <string name="btnAgregar">Agregar</string>
+</resources>
